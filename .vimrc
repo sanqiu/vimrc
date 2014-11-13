@@ -13,7 +13,7 @@ filetype off                  " required
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
- Plugin 'tpope/vim-fugitive'
+"" Plugin 'tpope/vim-fugitive'
  Plugin 'scrooloose/nerdtree'
  Plugin 'shawncplus/phpcomplete.vim'
  Plugin 'vim-scripts/taglist.vim'
@@ -88,7 +88,9 @@ set incsearch
 set shellslash
 set mouse=a
 "set spell"
+"set relativenumber "set nornu
 set more
+set so=5
 set showmatch
 set tags=tags,TAGS,./tags,./TAGS
 set wildmode=full
@@ -107,7 +109,7 @@ colorscheme monokai
 "set debug=msg
 "set foldmethod=syntax
 set laststatus=2
-set statusline=\ %t%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)\ %(%{fugitive#statusline()}%)
+set statusline=\ %t%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %) ""\ %(%{fugitive#statusline()}%)
 
 "---------------------------------------------
 "" Enable omni completion. (Ctrl-X Ctrl-O)
@@ -165,3 +167,25 @@ map <silent> <M-left> :wincmd h<CR>
 map <silent> <M-right> :wincmd l<CR>
 map <silent> <M-up> :wincmd k<CR>
 map <silent> <M-down> :wincmd j<CR>
+map <silent> <F6> :tselect 
+
+"for gui options"
+if has("gui_running")
+	set guioptions-=T
+	filetype on
+	set verbose=0
+	set cmdheight=8
+	set spell
+	set foldmethod=manual
+	"winpos 10 10
+	winsize 160 40
+	"let Tlist_Auto_Open = 1
+	"let Tlist_Sort_Type = name
+	autocmd Vimenter * NERDTree
+	set sessionoptions=buffers,tabpages
+	
+	"load Session.vim if exists
+	if filereadable("Session.vim")
+		source Session.vim
+	endif
+endif
