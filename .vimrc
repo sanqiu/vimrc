@@ -7,7 +7,8 @@ filetype off                  " required
 " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
 "
-" " let Vundle manage Vundle, required
+"first git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+"let Vundle manage Vundle, required
  Plugin 'gmarik/Vundle.vim'
 "
 " " The following are examples of different formats supported.
