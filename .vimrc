@@ -43,7 +43,7 @@ filetype off                  " required
 " " plugin from http://vim-scripts.org/vim/scripts.html
  Plugin 'L9'
 " " Git plugin not hosted on GitHub
- Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " " git repos on your local machine (i.e. when working on your own plugin)
 "" Plugin 'file:///home/gmarik/path/to/plugin'
 " " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -56,7 +56,7 @@ filetype off                  " required
  call vundle#end()            " required
  filetype plugin indent on    " required
 " " To ignore plugin indent changes, instead use:
-" "filetype plugin on
+filetype plugin on
 " "
 " " Brief help
 " " :PluginList       - lists configured plugins
@@ -89,7 +89,8 @@ set incsearch
 set shellslash
 set mouse=a
 "set spell"
-"set relativenumber "set nornu
+"set relativenumber 
+"set nornu
 set more
 set so=5
 set showmatch
@@ -106,7 +107,7 @@ set foldmethod=marker
 set foldlevel=0
 set foldcolumn=0
 
-colorscheme monokai
+" colorscheme monokai
 "set debug=msg
 "set foldmethod=syntax
 set laststatus=2
@@ -162,8 +163,8 @@ set tags=tags
 "Key mapping"
 map <silent> <F3> :NERDTreeToggle<CR>
 map <silent> <F9> :TlistToggle<CR> 
-map <silent> <S-left> :bp<CR>
-map <silent> <S-right> :bn<CR>
+map <silent> <S-up> :bp<CR>
+map <silent> <S-down> :bn<CR>
 map <silent> <M-left> :wincmd h<CR>
 map <silent> <M-right> :wincmd l<CR>
 map <silent> <M-up> :wincmd k<CR>
