@@ -28,7 +28,7 @@ filetype off                  " required
 " Plugin 'vim-scripts/phpfolding.vim'
  Plugin 'othree/html5.vim'
  Plugin 'rkulla/pydiction'
- Plugin 'vim-scripts/OmniCppComplete'
+" Plugin 'vim-scripts/OmniCppComplete'
  Plugin 'vim-scripts/YankRing.vim'
  Plugin 'Shougo/neocomplcache.vim'
 "" Plugin 'Lokaltog/vim-easymotion'
@@ -38,6 +38,9 @@ filetype off                  " required
  Plugin 'arnaud-lb/vim-php-namespace'
  Plugin 'sukima/xmledit'
  Plugin 'Raimondi/delimitMate'
+ Plugin 'joonty/vdebug'
+ Plugin 'Valloric/YouCompleteMe'
+
 
 
 " " plugin from http://vim-scripts.org/vim/scripts.html
@@ -107,7 +110,7 @@ set foldmethod=marker
 set foldlevel=0
 set foldcolumn=0
 
-" colorscheme monokai
+colorscheme desert
 "set debug=msg
 "set foldmethod=syntax
 set laststatus=2
@@ -131,6 +134,7 @@ set cot-=preview	"disable doc preview in omnicomplete
 "---------------------------------------------
 autocmd FileType php set makeprg=php\ -l\ %
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 "
 ""---------------------------------------------
 " for edit CSS
@@ -159,6 +163,15 @@ let Tlist_Show_One_File = 1
 let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
 set tags=tags
+
+"ycm settings  variables"
+let g:ycm_auto_trigger = 1
+"use 
+"let g:ycm_min_num_of_chars_for_complete = 99
+"for turning off identifier but keeping the semantic triggers.
+let g:ycm_filetpe_whitelist = {'*':1}
+"let g:ycm_filetype_blacklist = {'markdown':1, 'text':1, 'tagbar':1, 'mail':1,}
+
 
 "Key mapping"
 map <silent> <F3> :NERDTreeToggle<CR>
