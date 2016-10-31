@@ -197,7 +197,7 @@ if has("gui_running")
 	"let Tlist_Auto_Open = 1
 	"let Tlist_Sort_Type = name
 	autocmd Vimenter * NERDTree
-	set sessionoptions=buffers,tabpages
+	set sessionoptions=buffers,tabpages,curdir,folds,winsize,options
 	
 	"load Session.vim if exists
 	if filereadable("Session.vim")
