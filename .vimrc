@@ -14,7 +14,7 @@ filetype off                  " required
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
-"" Plugin 'tpope/vim-fugitive'
+ Plugin 'tpope/vim-fugitive'
  Plugin 'scrooloose/nerdtree'
  Plugin 'shawncplus/phpcomplete.vim'
  Plugin 'vim-scripts/taglist.vim'
@@ -23,9 +23,8 @@ filetype off                  " required
  Plugin 'maksimr/vim-jsbeautify'
 " Plugin 'ghosert/VimProject' "for winddows support
 " Plugin 'jlanzarotta/bufexplorer'
- Plugin 'jaredly/vim-debug'
  Plugin 'sickill/vim-monokai'
-" Plugin 'vim-scripts/phpfolding.vim'
+ "Plugin 'vim-scripts/phpfolding.vim'
  Plugin 'othree/html5.vim'
  Plugin 'rkulla/pydiction'
 " Plugin 'vim-scripts/OmniCppComplete'
@@ -73,7 +72,9 @@ filetype plugin on
 " " Put your non-Plugin stuff after this line
 
 
-"basic command for gvim"
+"basic command for vim
+"set debug=msg
+set verbose=0
 syntax on
 set number
 set clipboard=unnamedplus
@@ -83,6 +84,9 @@ set cursorline
 set autoindent
 set smartindent
 set ruler
+set expandtab
+set shiftwidth=4
+set softtabstop=4
 "set autochdir
 set tabstop=4
 set showcmd
@@ -91,7 +95,7 @@ set smartcase
 set incsearch
 set shellslash
 set mouse=a
-"set spell"
+set spell
 "set relativenumber 
 "set nornu
 set more
@@ -105,16 +109,15 @@ set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.lo,*.la,*.obj,*.pyc
 set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg 
 
 "FOLDING
-set foldenable
-set foldmethod=marker
-set foldlevel=0
+set foldmethod=indent
+set foldlevelstart=99
+set foldlevel=99
 set foldcolumn=0
 
-colorscheme desert
-"set debug=msg
-"set foldmethod=syntax
+colorscheme industry
 set laststatus=2
 set statusline=\ %t%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %) ""\ %(%{fugitive#statusline()}%)
+hi CursorLine term=bold cterm=bold ctermbg=8  gui=bold 
 
 "---------------------------------------------
 "" Enable omni completion. (Ctrl-X Ctrl-O)
@@ -147,7 +150,7 @@ autocmd FileType php setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
 " "---------------------------------------------
 " " for edit HTML
 " "---------------------------------------------
- autocmd FileType html,xhtml setlocal expandtab shiftwidth=2 tabstop=2
+ autocmd FileType html,xhtml setlocal expandtab shiftwidth=4 tabstop=4
  "softtabstop=2
 
 "--------------------------------------------------------------------------- 
@@ -158,13 +161,13 @@ set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
 
-"Taglist settings"
+"Taglist settings
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
 set tags=tags
 
-"ycm settings  variables"
+"ycm settings  variables
 let g:ycm_auto_trigger = 1
 "use 
 "let g:ycm_min_num_of_chars_for_complete = 99
@@ -174,33 +177,36 @@ let g:ycm_filetpe_whitelist = {'*':1}
 
 
 "Key mapping"
-map <silent> <F3> :NERDTreeToggle<CR>
-map <silent> <F9> :TlistToggle<CR> 
+map <silent> <C-e> :NERDTreeToggle<CR>
+map <silent> <C-s> :NERDTreeFind<CR>
+map <silent> <S-F9> :TlistToggle<CR> 
 map <silent> <S-up> :bp<CR>
 map <silent> <S-down> :bn<CR>
 map <silent> <M-left> :wincmd h<CR>
 map <silent> <M-right> :wincmd l<CR>
 map <silent> <M-up> :wincmd k<CR>
 map <silent> <M-down> :wincmd j<CR>
-map <silent> <F6> :tselect 
+map <silent> <g]> :tselect 
+nmap <Leader>v :tabedit $MYVIMRC
+nmap <Leader>s :source $MYVIMRC
 
-"for gui options"
+"for gui options
 if has("gui_running")
 	set guioptions-=T
 	filetype on
-	set verbose=0
 	set cmdheight=8
 	set spell
-	set foldmethod=manual
+	set cursorline
+	hi cursorline ctermbg=7
+	colorscheme desert
 	"winpos 10 10
 	winsize 160 40
 	"let Tlist_Auto_Open = 1
-	"let Tlist_Sort_Type = name
 	autocmd Vimenter * NERDTree
-	set sessionoptions=buffers,tabpages,curdir,folds,winsize,options
+	set sessionoptions=buffers,curdir,options,winsize,tabpages
 	
 	"load Session.vim if exists
-	if filereadable("Session.vim")
-		source Session.vim
+	if filereadable(getcwd() . "/Session.vim")
+		exe "source ./Session.vim"
 	endif
 endif
