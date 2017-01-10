@@ -14,32 +14,32 @@ filetype off                  " required
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
- Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
  Plugin 'scrooloose/nerdtree'
  Plugin 'shawncplus/phpcomplete.vim'
  Plugin 'vim-scripts/taglist.vim'
  Plugin 'scrooloose/syntastic'
  Plugin 'mattn/emmet-vim'
- Plugin 'maksimr/vim-jsbeautify'
+"" Plugin 'maksimr/vim-jsbeautify'
 " Plugin 'ghosert/VimProject' "for winddows support
 " Plugin 'jlanzarotta/bufexplorer'
- Plugin 'sickill/vim-monokai'
+" Plugin 'sickill/vim-monokai'
  "Plugin 'vim-scripts/phpfolding.vim'
- Plugin 'othree/html5.vim'
- Plugin 'rkulla/pydiction'
-" Plugin 'vim-scripts/OmniCppComplete'
+"" Plugin 'othree/html5.vim'
+"" Plugin 'rkulla/pydiction'
+"" Plugin 'vim-scripts/OmniCppComplete'
  Plugin 'vim-scripts/YankRing.vim'
- Plugin 'Shougo/neocomplcache.vim'
-"" Plugin 'Lokaltog/vim-easymotion'
- Plugin 'pangloss/vim-javascript'
- Plugin 'itspriddle/vim-jquery'
- Plugin 'tpope/vim-markdown'
- Plugin 'arnaud-lb/vim-php-namespace'
- Plugin 'sukima/xmledit'
+ Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Lokaltog/vim-easymotion'
+"" Plugin 'pangloss/vim-javascript'
+"" Plugin 'itspriddle/vim-jquery'
+"" Plugin 'tpope/vim-markdown'
+"" Plugin 'arnaud-lb/vim-php-namespace'
+"" Plugin 'sukima/xmledit'
  Plugin 'Raimondi/delimitMate'
- Plugin 'joonty/vdebug'
- Plugin 'Valloric/YouCompleteMe'
-
+"" Plugin 'joonty/vdebug'
+"" Plugin 'Valloric/YouCompleteMe'
+ Plugin 'airblade/vim-gitgutter'
 
 
 " " plugin from http://vim-scripts.org/vim/scripts.html
@@ -72,10 +72,10 @@ filetype plugin on
 " " Put your non-Plugin stuff after this line
 
 
-"basic command for vim
+"basic command for gvim"
 "set debug=msg
 set verbose=0
-syntax on
+syntax enable
 set number
 set clipboard=unnamedplus
 set hlsearch
@@ -95,7 +95,7 @@ set smartcase
 set incsearch
 set shellslash
 set mouse=a
-set spell
+set nospell
 "set relativenumber 
 "set nornu
 set more
@@ -126,11 +126,19 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
+"autocmd FileType c set omnifunc=ccomplete#Complete
+"autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 set cot-=preview	"disable doc preview in omnicomplete
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 "---------------------------------------------
 "" for PHP programming
@@ -161,19 +169,49 @@ set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
 
-"Taglist settings
+"Taglist settings"
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
-set tags=tags
 
-"ycm settings  variables
-let g:ycm_auto_trigger = 1
+"NeoComplete settings
+"leg g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 0
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3 
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : $HOME. '/.vimshell_hist',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+"ycm settings  variables"
+"let g:ycm_auto_trigger = 1
 "use 
 "let g:ycm_min_num_of_chars_for_complete = 99
 "for turning off identifier but keeping the semantic triggers.
-let g:ycm_filetpe_whitelist = {'*':1}
+"let g:ycm_filetpe_whitelist = {'*':1}
 "let g:ycm_filetype_blacklist = {'markdown':1, 'text':1, 'tagbar':1, 'mail':1,}
+
+" Vdebug options
+let g:vdebug_options={'ide_key': 'vdebug', 'break_on_open': 0 , 'server': '127.0.0.1', 'port': '9001'}
+
+" NERDTree
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
+
+" Taglist
+autocmd FileType taglist setlocal relativenumber
 
 
 "Key mapping"
@@ -190,12 +228,12 @@ map <silent> <g]> :tselect
 nmap <Leader>v :tabedit $MYVIMRC
 nmap <Leader>s :source $MYVIMRC
 
-"for gui options
+"for gui options"
 if has("gui_running")
 	set guioptions-=T
 	filetype on
 	set cmdheight=8
-	set spell
+	set nospell
 	set cursorline
 	hi cursorline ctermbg=7
 	colorscheme desert
