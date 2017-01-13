@@ -71,53 +71,66 @@ filetype plugin on
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
 
-
-"basic command for gvim"
+"General settings
 "set debug=msg
 set verbose=0
 syntax enable
 set number
 set clipboard=unnamedplus
-set hlsearch
-set ignorecase
-set cursorline
-set autoindent
-set smartindent
 set ruler
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-"set autochdir
-set tabstop=4
-set showcmd
-set showmode
-set smartcase
-set incsearch
-set shellslash
 set mouse=a
-set nospell
-"set relativenumber 
-"set nornu
 set more
 set so=5
-set showmatch
+set shellslash
 set tags=tags,TAGS,./tags,./TAGS
 set wildmode=full
 set wildmenu
 set wildignore+=.svn,CVS,.git 
 set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.lo,*.la,*.obj,*.pyc
 set wildignore+=*.exe,*.zip,*.jpg,*.png,*.gif,*.jpeg 
+set laststatus=2
+set statusline=\ %t%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %) ""\ %(%{fugitive#statusline()}%)
+
+"Coloring
+set cursorline
+colorscheme industry
+set colorcolumn=-1
+hi CursorLine term=bold cterm=bold ctermbg=8  
+hi ColorColumn term=bold ctermbg=8 
+hi StatusLine term=bold ctermbg=0 ctermfg=8 
+hi StatusLineNC term=bold ctermbg=0 ctermfg=8 
+hi VertSplit term=bold ctermbg=8 ctermfg=0
+
+"Editting
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+"set autochdir
+set showmatch
+set tabstop=4
+set showcmd
+set showmode
+set smartcase
+set nospell
+set autoindent
+set smartindent
+"set relativenumber 
+set textwidth=80
+
+"Searching
+set incsearch
+set ignorecase
+set hlsearch
+
+"Window
+set cmdheight=8
+set previewheight=30
 
 "FOLDING
 set foldmethod=indent
 set foldlevelstart=99
 set foldlevel=99
 set foldcolumn=0
-
-colorscheme industry
-set laststatus=2
-set statusline=\ %t%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %) ""\ %(%{fugitive#statusline()}%)
-hi CursorLine term=bold cterm=bold ctermbg=8  gui=bold 
 
 "---------------------------------------------
 "" Enable omni completion. (Ctrl-X Ctrl-O)
@@ -173,10 +186,11 @@ set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
 let Tlist_Show_One_File = 1 
 let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
+"let Tlist_Auto_Open = 1
 
 "NeoComplete settings
 "leg g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 0
+let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3 
 
@@ -207,8 +221,9 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 let g:vdebug_options={'ide_key': 'vdebug', 'break_on_open': 0 , 'server': '127.0.0.1', 'port': '9001'}
 
 " NERDTree
-let NERDTreeShowLineNumbers=1
+let g:NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
+"let g:NERDTreeWinSize=25
 
 " Taglist
 autocmd FileType taglist setlocal relativenumber
@@ -231,17 +246,18 @@ nmap <Leader>s :source $MYVIMRC
 "for gui options"
 if has("gui_running")
 	set guioptions-=T
+	set guioptions-=r
 	filetype on
-	set cmdheight=8
-	set nospell
-	set cursorline
-	hi cursorline ctermbg=7
 	colorscheme desert
-	"winpos 10 10
-	winsize 160 40
-	"let Tlist_Auto_Open = 1
+    set textwidth=80
+    set colorcolumn=-1
+    hi ColorColumn guibg=Gray30
+    hi StatusLine  guibg=Gray30
+	hi CursorLine guibg=Gray30
+    hi StatusLineNC  guifg=black guibg=Gray30
+    hi VertSplit guifg=black guibg=gray30
 	autocmd Vimenter * NERDTree
-	set sessionoptions=buffers,curdir,options,winsize,tabpages
+	set sessionoptions=buffers,tabpages
 	
 	"load Session.vim if exists
 	if filereadable(getcwd() . "/Session.vim")
