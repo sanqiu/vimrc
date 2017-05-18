@@ -193,10 +193,10 @@ map <silent> <C-s> :NERDTreeFind<CR>
 map <silent> <S-F9> :TlistToggle<CR> 
 map <silent> <S-up> :bp<CR>
 map <silent> <S-down> :bn<CR>
-map <silent> <M-left> :wincmd h<CR>
-map <silent> <M-right> :wincmd l<CR>
-map <silent> <M-up> :wincmd k<CR>
-map <silent> <M-down> :wincmd j<CR>
+map <silent> <M-h> :wincmd h<CR>
+map <silent> <M-l> :wincmd l<CR>
+map <silent> <M-k> :wincmd k<CR>
+map <silent> <M-j> :wincmd j<CR>
 map <silent> <g]> :ptselect 
 
 "NeoComplete
