@@ -1,77 +1,36 @@
+"Plugin settings
+  
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 " for windows mkdir in user home: .vim, and set
-" set rtp+=$HOME/.vim/bundle/Vundle.vim
- set rtp+=~/.vim/bundle/Vundle.vim
- call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
+" set rtp+=$HOME/.vim/autoload/plug.vim
+ set rtp+=~/.vim/autoload/plug.vim
+ call plug#begin('~/.vim/plugged')
+ " " alternatively, pass a path where Vundle should install plugins
 " "call vundle#begin('~/some/path/here')
 "
-"first git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-"let Vundle manage Vundle, required
- Plugin 'gmarik/Vundle.vim'
+"first get https://github.com/junegunn/vim-plug/blob/master/plug.vim to .vim/autoload/
 
-" " The following are examples of different formats supported.
-" " Keep Plugin commands between vundle#begin/end.
-" " plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
- Plugin 'scrooloose/nerdtree'
- Plugin 'shawncplus/phpcomplete.vim'
- Plugin 'vim-scripts/taglist.vim'
- Plugin 'scrooloose/syntastic'
- Plugin 'mattn/emmet-vim'
- Plugin 'vim-scripts/pythoncomplete'
-"" Plugin 'maksimr/vim-jsbeautify'
-" Plugin 'ghosert/VimProject' "for winddows support
-" Plugin 'jlanzarotta/bufexplorer'
-" Plugin 'sickill/vim-monokai'
- "Plugin 'vim-scripts/phpfolding.vim'
-"" Plugin 'othree/html5.vim'
-"" Plugin 'rkulla/pydiction'
-"" Plugin 'vim-scripts/OmniCppComplete'
-"" Plugin 'vim-scripts/YankRing.vim'
- Plugin 'Shougo/neocomplete.vim'
-" Plugin 'Lokaltog/vim-easymotion'
-"" Plugin 'pangloss/vim-javascript'
-"" Plugin 'itspriddle/vim-jquery'
-"" Plugin 'tpope/vim-markdown'
-"" Plugin 'arnaud-lb/vim-php-namespace'
-"" Plugin 'sukima/xmledit'
-" autocomplte for quotes, parens, brackets, etc
- Plugin 'Raimondi/delimitMate'
-"" Plugin 'joonty/vdebug'
-"" Plugin 'Valloric/YouCompleteMe'
- Plugin 'airblade/vim-gitgutter'
-
-" " plugin from http://vim-scripts.org/vim/scripts.html
- Plugin 'L9'
-" " Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" " git repos on your local machine (i.e. when working on your own plugin)
-"" Plugin 'file:///home/gmarik/path/to/plugin'
-" " The sparkup vim script is in a subdirectory of this repo called vim.
-" " Pass the path to set the runtimepath properly.
-Plugin 'tpope/vim-surround'
-" " Avoid a name conflict with L9
-"" Plugin 'user/L9', {'name': 'newL9'}
-"
-" " All of your Plugins must be added before the following line
- call vundle#end()            " required
+ Plug 'scrooloose/nerdtree'
+ Plug 'tpope/vim-fugitive'
+ Plug 'scrooloose/nerdtree'
+ Plug 'shawncplus/phpcomplete.vim'
+ Plug 'vim-scripts/taglist.vim'
+ Plug 'scrooloose/syntastic'
+ Plug 'mattn/emmet-vim'
+ Plug 'vim-scripts/pythoncomplete'
+ 
+ call plug#end()  
  filetype plugin indent on    " required
 " " To ignore plugin indent changes, instead use:
 filetype plugin on
 
 " " Brief help
-" " :PluginList       - lists configured plugins
-" " :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" " :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" "
-" " see :h vundle for more details or wiki for FAQ
+" " :PlugInstall    - installs plugins; append `!` to update or just
+"   :PlugUpdate
+
 " " Put your non-Plugin stuff after this line
 
 "General settings
