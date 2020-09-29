@@ -5,7 +5,8 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 " for windows mkdir in user home: .vim, and set
-" set rtp+=$HOME/.vim/autoload/plug.vim
+" set rtp+=$HOME/.config/nvim/plug.vim
+" call plug#begin('~/.config/nvim/plugged')
  set rtp+=~/.vim/autoload/plug.vim
  call plug#begin('~/.vim/plugged')
  " " alternatively, pass a path where Vundle should install plugins
