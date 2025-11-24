@@ -1,0 +1,15 @@
+payload:
+  - '+.zaobao.com'
+  - '+.accuweather.com'
+  - '+.seogroup.club'
+  - 'miao.baidu.com'
+  - '+.shodan.io'  
+  - 'challenges.cloudflare.com'
+  - 'accounts.shopify.com'
+##ExcludesfromAntiAd  
+  - 'gtms03.alicdn.com'
+  - 'gtms04.alicdn.com'
+  - '+.xf-yun.com'
+  - 'membercenter.made-in-china.com'
+  - 'rdelivery.qq.com'
+  - '+.qwen.ai'

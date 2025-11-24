@@ -1,0 +1,41 @@
+! Title: myFilters
+! Expires: 2 hours
+
+
+!! Networks filters
+||lib.leadscloud.com^$third-party
+||skeycig.com^$media,domain=skeycig.com
+||nyt.com^$media,third-party
+
+!!Elements filters
+!!Global
+##.open-app,.open-banner,open-app-banner,.go-to-app,.MODBanana,.MobileModal-wrapper,div.mod-idc,.floadAd,.articleAllsee,.groom-read
+
+##domains
+guancha.cn##.go-to-app,.g_header44,.g_swiper_container
+dict.cn###dbann
+qcc.com##.company-banner
+qcc.com##.vip-tag.app-header-drop
+ipchaxun.com##.MODBanana
+slashdot.org##.ad-on
+www.view-page-source.com###about,#posts,#testimonials
+www.bangongziyuan.com##.vip.vvv
+m.dict.cn###dbann
+m.taobao.com###root .recommend-container,#tcodeSideBar,body > button,.moss-wrapper,body > div:nth-child(11),.topbar-ld,.page-recommend,#recommend-wrapper.rax-view-v2,.banner-wrapper,.recommend-placeholder
+m.taobao.com###root > div > div.rax-view-v2.call-app,body > div:nth-child(20),div.rax-view-v2.bottombar > div.rax-view-v2.mf-app
+m.tmall.com###tcodeSideBar
+zhihu.com##div.MobileAppHeader-inner > div > button
+zhihu.com##div.KfeCollection-VipRecommendCard
+huxiu.com##.bottom-open-app-btn,.js-bottom-open-app-btn,.js-top-guide,.js-content-open-app,.js-click-log-ele,.js-click-log-href-sign,.qr_code_pc,.js-top-fixed
+apkpure.net##.right .search-box,.right .right_apkpure,.slide-banner,.quick-access-new,.module.popular-games,.module.preregister,.module.game-on-sale,.module.latest-update-games,.hot-search-games-24h
+bilibili.com##.launch-app-btn,.openapp-dialog
+similarweb.com###TrialBanner
+sohu.com###right-side-bar, .hot-article
+my.m.jd.com##.modal
+m.jd.com###jdLive
+!!m.jd.com###jdRecommend,.m_webcomponent_recommend
+qcc.com##.app-vip-modal,.modal-backdrop,.campaign-modal
+ithome.com##.brand-column-item.brand-column-lapin
+
+!!Elements modifiers
+m.taobao.com#$#body {padding-top: 0 !important;}
