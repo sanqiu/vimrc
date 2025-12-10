@@ -6,6 +6,7 @@ payload:
   - '+.shodan.io'  
   - 'challenges.cloudflare.com'
   - 'accounts.shopify.com'
+  - 'membercenter.made-in-china.com'
 ##ExcludesfromAntiAd  
   - 'gtms03.alicdn.com'
   - 'gtms04.alicdn.com'
