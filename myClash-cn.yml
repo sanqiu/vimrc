@@ -5,6 +5,10 @@ payload:
   - 'miao.baidu.com'
   - '+.shodan.io'  
   - 'challenges.cloudflare.com'
+  - 'turnstile.cloudflare.com'
+  - 'static.cloudflareinsights.com'
+  - 'hcaptcha.com'
+  - 'recaptcha.net'
   - 'accounts.shopify.com'
   - 'membercenter.made-in-china.com'
 ##ExcludesfromAntiAd  
