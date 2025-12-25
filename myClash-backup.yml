@@ -1,8 +1,4 @@
 payload:
-  - '+.openai.com'
-  - '+.chatgpt.com'
-  - '+.quora.com'
-  - '+.quoracdn.net'
   - '+.dnb.com'
   - '+.linkedin.com'
   - '+.made-in-china.com'
