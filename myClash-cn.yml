@@ -4,12 +4,6 @@ payload:
   - '+.seogroup.club'
   - 'miao.baidu.com'
   - '+.shodan.io'  
-  - 'challenges.cloudflare.com'
-  - 'turnstile.cloudflare.com'
-  - 'static.cloudflareinsights.com'  
-  - 'hcaptcha.com'
-  - 'recaptcha.net'
-  - 'accounts.shopify.com'
   - 'membercenter.made-in-china.com'
 ##ExcludesfromAntiAd  
   - 'gtms03.alicdn.com'
@@ -18,3 +12,8 @@ payload:
   - 'rdelivery.qq.com'
   - '+.qwen.ai'
   - '+.gov.ph'
+  - '+.go2https.com'
+  - '+.any00.com
+  ##excluede Direct DNS
+  - 'doh.pub'
+  - '+.alidns.com'
