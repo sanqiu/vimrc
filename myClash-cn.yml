@@ -5,6 +5,7 @@ payload:
   - 'miao.baidu.com'
   - '+.shodan.io'  
   - 'membercenter.made-in-china.com'
+  - 'backup.zqvapor.com'
 ##ExcludesfromAntiAd  
   - 'gtms03.alicdn.com'
   - 'gtms04.alicdn.com'
