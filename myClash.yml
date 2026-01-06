@@ -196,7 +196,6 @@ payload:
   - DOMAIN-SUFFIX,api-unionid.meituan.com
   - DOMAIN-SUFFIX,analytics.map.qq.com
   - DOMAIN-SUFFIX,bike-exp.meituan.net
-  - IP-CIDR,43.130.30.247/24,REJECT
   - DOMAIN-SUFFIX,apimobile.meituan.com
   - DOMAIN-SUFFIX,hreport.meituan.com
   - DOMAIN-SUFFIX,dpfile.com  
