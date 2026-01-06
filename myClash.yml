@@ -252,9 +252,9 @@ payload:
   - DOMAIN-SUFFIX,dns.jd.com
   - DOMAIN-SUFFIX,dns.qiyipic.iqiyi.com
   - DOMAIN-SUFFIX,dns.weibo.cn
-  - DOMAIN-SUFFIX,dns.weixin.qq.com
-  - DOMAIN-SUFFIX,dns.weixin.qq.com.cn
-  - DOMAIN-SUFFIX,dns.wechat.com
+#  - DOMAIN-SUFFIX,dns.weixin.qq.com
+#  - DOMAIN-SUFFIX,dns.weixin.qq.com.cn
+#  - DOMAIN-SUFFIX,dns.wechat.com
 #  - IP-CIDR,43.130.30.247/24
   - DOMAIN-SUFFIX,doh.dns.apple.com
   - DOMAIN-SUFFIX,doh.iqiyi.com
