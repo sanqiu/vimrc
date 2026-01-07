@@ -1,23 +1,13 @@
 payload:
   - '+.zaobao.com'
   - '+.accuweather.com'
-  - '+.seogroup.club'
-  - 'miao.baidu.com'
-  - '+.shodan.io'  
   - 'membercenter.made-in-china.com'
   - 'backup.zqvapor.com'
-  - 'eu.zqvapor.com'
-  - 'us.zqvapor.com'
-  - 'szextshort.weixin.qq.com'
 ##ExcludesfromAntiAd  
   - 'gtms03.alicdn.com'
   - 'gtms04.alicdn.com'
-  - '+.xf-yun.com'
   - 'rdelivery.qq.com'
   - '+.qwen.ai'
-  - '+.gov.ph'
-  - '+.go2https.com'
-  - '+.any00.com
   ##excluede Direct DNS
   - 'doh.pub'
   - '+.alidns.com'
