@@ -6,6 +6,8 @@ payload:
   - '+.shodan.io'  
   - 'membercenter.made-in-china.com'
   - 'backup.zqvapor.com'
+  - 'eu.zqvapor.com'
+  - 'us.zqvapor.com'
   - 'szextshort.weixin.qq.com'
 ##ExcludesfromAntiAd  
   - 'gtms03.alicdn.com'
