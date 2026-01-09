@@ -5,6 +5,7 @@ payload:
   - DOMAIN,ad.docer.wps.cn
   - DOMAIN,adstats.tencentmusic.com
   - DOMAIN,pcapp-data-collect.youku.com
+  - DOMAIN,galileotelemetry.tencent.com
 
 ##domain-keyword
   - DOMAIN-KEYWORD,httpdns
