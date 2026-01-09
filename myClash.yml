@@ -6,6 +6,7 @@ payload:
   - DOMAIN,adstats.tencentmusic.com
   - DOMAIN,pcapp-data-collect.youku.com
   - DOMAIN,galileotelemetry.tencent.com
+  - DOMAIN-SUFFIX,scorecardresearch.com
 
 ##domain-keyword
   - DOMAIN-KEYWORD,httpdns
