@@ -3,7 +3,7 @@ payload:
   - '+.accuweather.com'
   - 'membercenter.made-in-china.com'
   - 'backup.zqvapor.com'
-  - 'us.zqvapor.com'
+  - '+.zqvapor.com'
 ##ExcludesfromAntiAd  
   - 'gtms03.alicdn.com'
   - 'gtms04.alicdn.com'
