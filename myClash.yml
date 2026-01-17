@@ -10,7 +10,6 @@ payload:
 
 ##domain-keyword
   - DOMAIN-KEYWORD,httpdns
-  - DOMAIN-KEYWORD,dns
   - DOMAIN-KEYWORD,adash
   - DOMAIN-KEYWORD,adx-
   - DOMAIN-KEYWORD,ads-
