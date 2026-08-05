@@ -7,6 +7,7 @@ payload:
   - DOMAIN,pcapp-data-collect.youku.com
   - DOMAIN,galileotelemetry.tencent.com
   - DOMAIN-SUFFIX,scorecardresearch.com
+  - DOMAIN-SUFFIX,global-cdn.me
 
 ##domain-keyword
   - DOMAIN-KEYWORD,httpdns
