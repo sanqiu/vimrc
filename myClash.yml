@@ -47,3 +47,7 @@ payload:
   - DOMAIN-SUFFIX,adobeid-na1.services.adobe.com
   - DOMAIN-SUFFIX,geo2.adobe.com
   - DOMAIN-SUFFIX,cai-splunk-proxy.adobe.io
+
+  ##Spotify
+  - DOMAIN-SUFFIX,videoamp.com
+  - DOMAIN-SUFFIX,coimtwjwoasak.com  
