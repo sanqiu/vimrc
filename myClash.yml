@@ -9,6 +9,7 @@ payload:
   - DOMAIN-SUFFIX,scorecardresearch.com
   - DOMAIN-SUFFIX,global-cdn.me
   - DOMAIN-SUFFIX,tiance.wps.cn
+  - DOMAIN-SUFFIX,*.ksord.com
 
 ##domain-keyword
   - DOMAIN-KEYWORD,httpdns
